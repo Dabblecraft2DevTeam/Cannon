@@ -1,0 +1,110 @@
+#This is the Configuration File of Nexu18's Plugin PirateCannon.
+#If you want to restore the original config file just delete this one 
+#and reload/restart you server.
+#I wish you a lot of fun with this plugin. 
+#If you have any issues, please contact me.
+#
+
+#used permission system:
+#op: only OP and permitted players can use cannons. uses permission cannon.use
+#all: everyone can use cannons.
+permissions: op
+
+#cannon material ids
+cannontypes:
+  - 4
+  - 42
+  - 49
+
+#minimum cannon size
+#must be bigger than 0
+mincannonsize: 1
+
+#maximum cannon size
+#must be bigger than mincannonsize
+maxcannonsize: 3
+
+tool:
+#set weather you need a tool in hand to fire a cannon or not
+  use: false
+#set the type id of the tool you want to be used
+  type: 259
+#set the damage the tool is taking in 1 shot
+#type 0 to not damage the tool
+  damage: 0
+
+ammo:
+#item ids which are consumed by using a cannon
+  types:
+    - 46
+#number of items which are consumed
+#first number here is the amount of the first ammo item id, second here belongs to the second item id, ...
+  number:
+    - 1
+#decide if a cannon should consume ammunition
+  use: true
+
+#edit the explosion on impact
+explosion:
+#power / radius of the explosion.
+  power: 2
+#sets wether the explosion is able to ignite blocks or not.
+  setfire: true
+#set weather the explosion destroys blocks or not
+#do not forget to turn setfire off as well
+  blockdamage: true
+#adds damage players are taking to the original explosion damage (in 1/2 hearts)
+#use this if you turned explosion damage off by default or want to increase the damage players are taking by the explosion normally
+#Attention! players are already taking damage by the original explosion, this is additional!
+#Attention! this can kill god-mode players! only creative players are not effected!
+  playerdamage: 0
+#sets the radius additional player damage above is dealt
+  playerdamagerange: 2
+#adds damage non-player, living entities are taking to the original explosion damage (in 1/2 hearts)
+  entitydamage: 0
+#sets the radius additional entity damage above is dealt
+  entitydamagerange: 2
+
+#changes the density of the smoke effect when using a cannon. do not enter high values!
+smokeeffect: 2
+
+#binds cooldown-times to players, so one player can ony fire one cannon in this time
+useplayercooldown: false
+#player-binded cooldown time in milliseconds
+playercooldown: 1000
+
+#binds cooldown-times to cannons, so one cannon can only get fired once in a certain time
+#if this is set true, cannon signs will have to carry a number (sorry, i know its ugly) to be identified by the plugin
+usecannoncooldown: true
+#cannon-binded cooldown time in milliseconds
+cannoncooldown: 5000
+#change the way cannon dependig cooldown times are displayed
+#possible are:
+# message+double
+# message+int
+# double
+# int
+# none
+cannoncooldownoutput: message+int
+
+#enables/disables redstone as trigger for cannons
+#caution! this makes players able to shoot cannons even when they do not have permission!
+#caution! this works without consuming ammo!
+useredstonetriggers: false
+
+#defines the entity type of the cannonball
+#possible are:
+# Snowball
+# Arrow
+# Egg
+# ExpBottle
+# Potion
+# TNT
+#ATTENTION! ExpBottles will drop xp, do NOT use this on dedicated survival servers!
+#ATTENTION! TNT is buggy, do NOT use this on dedicated servers! I'm working on a fix ...
+projectile: snowball
+
+#makes cannons rotatable (90 degrees)
+allowrotation: true
+#chooses the block which rotates a cannon
+rotationblock: 76

@@ -1,0 +1,7 @@
+name: PirateCannon
+main: com.github.keough99.PirateCannon
+version: 1.0.7
+commands:
+   cannon:
+      description: Simple PirateCannon description Command.
+      usage: /<command>
